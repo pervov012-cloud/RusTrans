@@ -1,0 +1,869 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600&display=swap');
+
+/* Сброс стилей */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Фон и общее оформление */
+body {
+    background-color: #e9e9e9; /* Сделали чуть темнее */
+    color: #333;
+    scroll-behavior: smooth;
+}
+
+/* Делаем навигацию фиксированной */
+header {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 70px; /* Увеличили высоту */
+    background: black !important; /* Черный цвет без прозрачности */
+    z-index: 1000;
+    display: flex;
+    align-items: center;
+}
+
+/* Контейнер */
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Логотип */
+.logo {
+    color: white;
+    font-size: 28px; /* Увеличен размер */
+    font-weight: bold;
+}
+
+/* Навигация */
+.nav-links {
+    display: flex;
+    gap: 30px;
+    list-style: none; /* Убрали точки */
+}
+
+/* Ссылки в навигации */
+.nav-links a {
+    text-decoration: none;
+    color: white;
+    font-size: 18px; /* Увеличен размер текста */
+    transition: 0.3s;
+}
+
+.nav-links a:hover {
+    color: #e67e22;
+}
+
+/* Слайдер */
+.hero {
+    margin-top: 100px; /* Подстроили под новую высоту навбара */
+    width: 100%;
+    height: 1200px; /* Сделали оптимальную высоту */
+    overflow: hidden;
+}
+
+.swiper {
+    width: 100%;
+    height: 100%;
+}
+
+.swiper-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Блок внутри слайдера */
+.slide-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* Теперь ровно по центру */
+    background: rgba(0, 0, 0, 0.6);
+    padding: 20px 30px;
+    border-radius: 8px;
+    color: white;
+    width: 50%;
+    text-align: center;
+}
+
+.slide-content h1 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+.slide-content p {
+    font-size: 18px;
+}
+
+/* Кнопка */
+.btn {
+    display: inline-block;
+    background: #e67e22;
+    color: white;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    margin-top: 12px;
+    font-size: 16px;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #d35400;
+}
+
+/* Оранжевая точка в слайдере */
+.swiper-pagination-bullet {
+    background: #e67e22 !important;
+}
+
+/* О компании */
+#about {
+    margin-top: 30px;
+    padding: 80px 0; /* Одинаковые отступы сверху и снизу */
+    text-align: center;
+    background-color: #ffffff;
+}
+
+/* Контейнер внутри about */
+#about .about-container {
+    max-width: 1000px;
+    margin: 0 auto;
+}
+
+/* Заголовок */
+#about h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+
+/* Подзаголовок */
+.about-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px; /* Уменьшил отступ вниз */
+}
+
+/* Блок преимуществ */
+.about-features {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* Карточки преимуществ */
+.feature {
+    flex: 1;
+    min-width: 260px;
+    max-width: 300px;
+    text-align: center;
+    padding: 15px;
+}
+
+/* Иконки */
+.feature img {
+    width: 60px;
+    margin-bottom: 15px;
+}
+
+/* Заголовки преимуществ */
+.feature h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+/* Текст преимуществ */
+.feature p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Секция проектов */
+#projects {
+    margin-top: 30px;
+    padding: 80px 0;
+    background: #ffffff;
+    text-align: center;
+}
+
+/* Контейнер секции */
+.projects-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок */
+#projects h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Описание */
+.projects-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+/* Галерея */
+.projects-gallery {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+}
+
+/* Карточка проекта */
+.project {
+    position: relative;
+    overflow: hidden;
+    border-radius: 8px;
+}
+
+/* Изображения */
+.project img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+/* Эффект увеличения */
+.project:hover img {
+    transform: scale(1.1);
+}
+
+/* Затемнение при наведении */
+.overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+/* Показываем затемнение при наведении */
+.project:hover .overlay {
+    opacity: 1;
+}
+
+/* Заголовок на карточке */
+.overlay h3 {
+    font-size: 22px;
+    font-weight: bold;
+}
+
+/* Секция Этапов */
+#steps {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Контейнер */
+.steps-container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Заголовок секции */
+#steps h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Описание секции */
+.steps-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 800px;
+    margin: 0 auto 40px;
+}
+
+/* Контейнер этапов */
+.steps {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr); 
+    gap: 30px;
+    justify-items: center;
+}
+
+
+/* Индивидуальные этапы */
+.step {
+    flex: 1;
+    min-width: 280px;
+    max-width: 280px;
+    text-align: center;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    background-color: #fafafa;
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+/* Подсветка при наведении */
+.step:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Иконки шагов */
+.step img {
+    width: 60px;
+    margin-bottom: 20px;
+}
+
+/* Заголовки этапов */
+.step h3 {
+    font-size: 22px;
+    margin-bottom: 15px;
+}
+
+/* Описание этапов */
+.step p {
+    font-size: 16px;
+    color: #777;
+}
+
+/* Секция Отзывов */
+#reviews {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 80px 0;
+    text-align: center;
+}
+
+/* Контейнер для отзывов */
+.reviews-container {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Заголовок секции */
+#reviews h2 {
+    font-size: 36px;
+    margin-bottom: 20px;
+}
+
+/* Описание секции */
+.reviews-description {
+    font-size: 18px;
+    color: #555;
+    max-width: 700px;
+    margin: 0 auto 40px;
+}
+
+/* Контейнер для всех отзывов */
+.reviews {
+    display: flex;
+    flex-direction: column;
+    gap: 30px;
+}
+
+/* Отзывы */
+.review {
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s, box-shadow 0.3s;
+}
+
+.review:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+/* Текст отзыва */
+.review-text {
+    font-size: 18px;
+    color: #777;
+    margin-bottom: 15px;
+}
+
+/* Автор отзыва */
+.review-author {
+    font-size: 16px;
+    color: #555;
+    font-weight: bold;
+}
+
+/* Рейтинг */
+.review-rating {
+    margin-top: 10px;
+}
+
+/* Звезды */
+.star {
+    font-size: 20px;
+    color: #f39c12; /* Оранжевый цвет для звезд */
+}
+
+#contacts {
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+.contacts-container {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 40px;
+    background: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.contacts-container h2 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+.contacts-content {
+    display: flex;
+    justify-content: space-between;
+    gap: 30px;
+}
+
+.contact-info, .contact-form {
+    width: 48%;
+}
+
+.contact-info h3, .contact-form h3 {
+    font-size: 1.5rem;
+    margin-bottom: 20px;
+}
+
+.contact-info p {
+    font-size: 1.1rem;
+    line-height: 1.6;
+}
+
+.contact-form label {
+    display: block;
+    margin-bottom: 5px;
+    font-size: 1.1rem;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-form button {
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.contact-form button:hover {
+    background-color: #e65c00;
+}
+
+textarea {
+    resize: none;
+}
+
+/* Секция с формой */
+#form {
+    text-align: center;
+    margin-top: 30px;
+    background-color: #ffffff;
+    padding: 80px 0;
+}
+
+#form h2 {
+    font-size: 24px;
+    margin-bottom: 10px;
+}
+
+#form p {
+    font-size: 18px;
+    margin-bottom: 20px;
+}
+
+.form-container button {
+    padding: 10px 20px;
+    background-color: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+    cursor: pointer;
+}
+
+.form-container button:hover {
+    background-color: #e65c00;
+}
+
+/* Стили для модального окна */
+.modal {
+    display: none; /* Скрыто по умолчанию */
+    position: fixed; /* Фиксированное положение */
+    z-index: 1000;
+    left: 50%;
+    top: 50%;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6); /* Затемнение фона */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transform: translate(-50%, -50%); /* Центрирование */
+}
+.modal-content {
+    background: #fff;
+    padding: 30px;
+    width: 90%;
+    max-width: 450px;
+    border-radius: 12px;
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+    position: relative;
+    animation: fadeIn 0.3s ease-in-out;
+}
+
+/* Анимация появления */
+@keyframes fadeIn {
+    from {
+        transform: translateY(-20px);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+
+.modal-content h2 {
+    font-size: 24px;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.modal-content label {
+    display: block;
+    font-size: 16px;
+    margin-bottom: 6px;
+}
+
+.modal-content input,
+.modal-content select {
+    width: 100%;
+    padding: 10px;
+    font-size: 16px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 6px;
+}
+
+.modal-content button {
+    width: 100%;
+    padding: 12px;
+    font-size: 18px;
+    background: #e67e22;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.modal-content button:hover {
+    background: #d35400;
+}
+
+/* Кнопка закрытия */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 20px;
+    font-size: 24px;
+    color: #333;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.close:hover {
+    color: #e67e22;
+}
+
+/* Подвал */
+footer {
+    background-color: #000000;
+    color: white;
+    margin-top: 30px;
+    padding: 80px 0;
+}
+
+.footer-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+.footer-info, .footer-links, .footer-socials, .footer-contact {
+    width: 22%;
+}
+
+.footer-info p, .footer-links ul, .footer-socials ul, .footer-contact p {
+    font-size: 14px;
+    line-height: 1.6;
+}
+
+.footer-links ul, .footer-socials ul {
+    list-style: none;
+    padding: 0;
+}
+
+.footer-links ul li, .footer-socials ul li {
+    margin-bottom: 10px;
+}
+
+.footer-links ul li a, .footer-socials ul li a {
+    text-decoration: none;
+    color: white;
+    font-size: 14px;
+}
+
+.footer-links ul li a:hover, .footer-socials ul li a:hover {
+    color: #d35400; /* Цвет акцента */
+}
+
+.footer-bottom {
+    text-align: center;
+    font-size: 12px;
+    border-top: 1px solid #555;
+    padding-top: 10px;
+}
+
+
+/* 1. Общие стили */
+@media screen and (max-width: 1200px) {
+    body {
+        font-size: 16px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    body {
+        font-size: 12px;
+    }
+}
+
+/* 2. Карусель */
+@media screen and (max-width: 1200px) {
+    .carousel {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .carousel img {
+        width: 100%;
+        height: auto;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .carousel img {
+        width: 100%;
+    }
+}
+
+/* 3. Секции (О компании, Услуги, Преимущества) */
+@media screen and (max-width: 1200px) {
+    .section {
+        padding: 40px 10%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section {
+        padding: 30px 5%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section {
+        padding: 20px 5%;
+    }
+}
+
+/* 4. Формы */
+@media screen and (max-width: 1200px) {
+    .form-container {
+        width: 80%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .form-container {
+        width: 90%;
+        padding: 10px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .form-container {
+        width: 100%;
+        padding: 5px;
+    }
+
+    .form-container input {
+        width: 100%;
+    }
+}
+
+/* 5. Кнопки */
+@media screen and (max-width: 1200px) {
+    button {
+        padding: 12px 24px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    button {
+        padding: 10px 20px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    button {
+        width: 100%;
+        padding: 10px;
+    }
+}
+
+/* 6. Футер */
+@media screen and (max-width: 1200px) {
+    footer {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    footer {
+        padding: 15px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    footer {
+        padding: 10px;
+    }
+
+    footer a {
+        font-size: 14px;
+    }
+}
+
+/* 7. Навигация */
+@media screen and (max-width: 1200px) {
+    .navbar {
+        padding: 20px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .navbar a {
+        padding: 12px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .navbar {
+        flex-direction: column;
+        align-items: center;
+        padding: 10px;
+    }
+
+    .navbar a {
+        padding: 8px;
+        font-size: 14px;
+    }
+}
+
+/* 8. Изображения */
+@media screen and (max-width: 1200px) {
+    .section img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section img {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section img {
+        width: 100%;
+    }
+}
+
+/* 9. Тексты в секциях */
+@media screen and (max-width: 1200px) {
+    .section .text {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .section .text {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .section .text {
+        width: 100%;
+        padding: 10px;
+    }
+}
